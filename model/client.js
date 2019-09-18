@@ -1,14 +1,34 @@
-var mongoose = require('mongoose');
-var Schema   = mongoose.Schema;
-var ObjectId = mongoose.Schema.Types.ObjectId;
+const Sequelize = require('sequelize')
 
-var Client = new Schema({
-    username : String,
-    email : String,
-    course: [{type:String}],
-    tel:{type:Number},
-    claim: {type:Boolean,default:false},
-    claimedby: {type:String,default:""},
+const sequelize = require('../utils/database');
+
+const client = sequelize.define('client',{
+	id: {
+		type: Sequelize.INTEGER,
+		primaryKey: true,
+		autoIncrement: true,
+	},
+	username: {
+		type: Sequelize.STRING,
+		allowNull: false
+	},
+	email: {
+		type: Sequelize.STRING,
+		allowNull: false
+	},
+	tel: {
+		type: Sequelize.INTEGER,
+		allowNull: false
+	},
+	claimed: {
+		type: Sequelize.BOOLEAN,
+	},
+	claimedby: {
+		type: Sequelize.INTEGER
+	}
+
+
 })
 
-module.exports = mongoose.model('Client', Client);
+
+module.exports = client;
