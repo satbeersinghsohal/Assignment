@@ -14,7 +14,7 @@ router.post('/claimlead',adminController.claimALead)
 
 router.post('/signup',adminController.signup)
 
-router.post('/signin',adminController.signin)
+router.post('/signin', passport.authenticate('local',{ successRedirect: '/', failureRedirect: '/signinerror'}));
 
 
 module.exports = router

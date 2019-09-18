@@ -58,7 +58,16 @@ exports.signup = (req,res,next) => {
 }
 
 exports.signin = (req,res,next) =>{
+
+
+
 	const { username , password } = req.body;
+
+
+
+
+
+
 	User
 	.findOne({where :{ username: username}})
 	.then((r) => {
