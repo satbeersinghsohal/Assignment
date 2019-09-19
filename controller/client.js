@@ -1,4 +1,5 @@
 const Client 	= require('../model/client')
+const Test 	= require('../model/test')
 
 
 exports.storedetails = (req,res,next) => {
@@ -10,5 +11,9 @@ exports.storedetails = (req,res,next) => {
 	.catch((err) => console.log(err));
 }
 
+
+exports.storeintest = (req,res,next) => {
+ 	res.send("sdfs")
+}
 
 
