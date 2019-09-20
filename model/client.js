@@ -17,7 +17,7 @@ const client = sequelize.define('client',{
 		allowNull: false
 	},
 	tel: {
-		type: Sequelize.INTEGER,
+		type: Sequelize.BIGINT,
 		allowNull: false
 	},
 	claimed: {

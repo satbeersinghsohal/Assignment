@@ -30,11 +30,7 @@ app.use('/admin',adminroutes);
 
 
 sequelize
-.sync({logging: (str) => {
-	let query_string = str.substring(21);
-	alterTableIfNeeded(query_string);
-	
-}})
+.sync()
 .then(result => console.log("success"))
 .catch(err => console.log(err));
 
